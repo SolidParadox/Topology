@@ -1,68 +1,53 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class TilingPlacementManager : MonoBehaviour {
   public UnitInfo alpha;
-  private UnitInfo initialBase;
-  public SubZoneInfo szi;
-
-  private int step = 0;
+  public LayerMask lmRFloor;
+  public int mode;
 
   private void Start () {
-    step = 0;
+    mode = 0;
   }
 
   public bool TrySetAlpha ( UnitInfo _alpha ) {
     if ( alpha == null ) {
       alpha = _alpha;
+      alpha.ChangeMoving ( true );
+      alpha.RemoveSub ();
+      mode = 0;
       return true;
     }
     return false;
   }
 
+  public bool TrySetAlpha ( Transform _alpha ) {
+    return TrySetAlpha ( _alpha.GetComponent<UnitInfo> () );
+  }
+
   public void LateUpdate () {
     if ( alpha != null ) {
-      List<UnitInfo> delta;
-      int deltaLG;
-      Vector3 cPos = alpha.transform.localPosition;
-
-      if ( step == 2 ) {
-        if ( szi.TryGetContext ( cPos, out delta ) ) {
-          deltaLG = delta.Count;
-          Debug.Log ( "FOUND A TILE TO STACK ON" );
-          delta [ deltaLG - 1 ].stack = alpha;
-        } else {
-          Debug.Log ( "GOING BACK AAAAAAA" );
-          if ( initialBase != null ) {
-            initialBase.stack = alpha;
-          }
-        }
-        step = 3;
-      }
-      
-      if ( step == 0 ) {
-        if ( szi.TryGetContext ( cPos, out delta ) ) {
-          deltaLG = delta.Count;
-          for ( int i = 0; i < deltaLG; i++ ) { 
-            if ( delta [ i ].stack == alpha ) {
-              delta [ i ].stack = null;
-              break;
-            }
-          }
-        }
-        step = 1;
-      }
-
-      if ( step == 3 ) {
-        step = 0;
-        alpha = null;
-        initialBase = null;
+      // During mode 0, i could continually raycast and check if it's hitting someething, and highlight it accordingly
+      // Also, the highlighted ones could ever so slightly move the stack up so its easier to stack things inbetween
+      if ( mode == 1 ) {
+        StackAndReleaseAlpha();
+        mode = 0;
       }
     }
   }
 
+  public void ReleaseAlpha () {
+    mode = 1;
+  }
 
-  public void StartSnap () {
-    step = 2;
+  public void StackAndReleaseAlpha () { 
+    RaycastHit hit;
+    if ( Physics.Raycast ( alpha.transform.position - Vector3.forward * 20, Vector3.forward, out hit, 50, lmRFloor ) ) {
+      UnitInfo uif = hit.transform.GetComponent<UnitInfo>();
+      if ( uif != null ) { // And you presumably can stack them on each other
+        alpha.StackOn ( uif );
+      }
+    }
+    alpha.ChangeMoving ( false );
+    alpha = null;
   }
 }

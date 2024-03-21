@@ -16,13 +16,6 @@ public class SubZoneGenerator_Custom : Editor {
     if ( GUILayout.Button ( "INSERT" ) ) {
       pathGenerator.Insert ();
     }
-    string currentMessage = "";
-    if ( pathGenerator.contents == null ) {
-      currentMessage = "NOT INITIALIZED";
-    } else {
-      currentMessage = "CONTENTS COUNT : " + pathGenerator.contents.Count.ToString ();
-    }
-    GUILayout.Label ( currentMessage );
   }
 }
 #endif
