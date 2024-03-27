@@ -1,78 +1,135 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MainController : MonoBehaviour {
+  public TilingPlacementManager manTP;
+  public BuildingViewManager    manBV;
+
   public Camera cam;
   public Transform target;
-  public TilingPlacementManager tpm;
-  private bool sear = false;
+
+  private bool sear1;
 
   public LayerMask lmRUnit;
 
   public int mode;
-  private Vector3 deltaPos, cPos;
-  private RaycastHit hit;
-
+  private Vector2 deltaPos, deltaSPPos, cPos;
   public float keyPosSens;
   public float strengthZoom;
 
-  private int unlockedVertical = 1;
+  public GameObject crosshair;
+  public LayerMask lmGPR; // Ground penetrating radar
 
   private void Start () { 
     mode = 0;
     deltaPos = Vector3.zero; cPos = Vector3.zero;
   }
 
-  public void UnlockVertical () {
-    unlockedVertical = 1;
-  }
-
-  public void LockVertical () {
-    unlockedVertical = 0;
+  public void ReleaseTarget () {
+    if ( mode == 2 ) {
+      manTP.ReleaseAlpha ();
+    }
+    if ( mode == 4 ) {
+      // Do something
+      crosshair.SetActive ( false );
+    }
+    mode = -1;
+    target = null;
   }
 
   void LateUpdate () {
-    cPos = Input.mousePosition;
+    cPos = cam.ScreenToWorldPoint ( Input.mousePosition );
 
+    // TARGET STUFF
     if ( Input.GetAxis ( "Fire1" ) > 0 ) {
-      if ( !sear ) {
-        if ( Physics.Raycast ( cam.ScreenToWorldPoint ( cPos ) + new Vector3 ( 0, 0, -10 ), Vector3.forward, out hit, 20, lmRUnit ) ) {
+      if ( mode == 0 ) {
+        RaycastHit hit;
+        if ( Physics.Raycast ( (Vector3)cPos + Vector3.forward * -10, Vector3.forward, out hit, 20, lmRUnit ) ) {
+          // Grabbed Unit, move the unit
           target = hit.collider.transform;
-          tpm.TrySetAlpha ( target );
+          manTP.TrySetAlpha ( target );
           mode = 2;
         } else {
+          // Grabbed terrain, move the camera
           mode = 1;
         }
-        sear = true;
       }
     } else {
-      if ( mode == 2 ) {
-        tpm.ReleaseAlpha ();
-      }
+      ReleaseTarget ();
       mode = 0;
-      sear = false;
     }
 
-    Vector3 deltaWPos = cam.ScreenToWorldPoint ( cPos ) - cam.ScreenToWorldPoint ( deltaPos );
-    deltaWPos.y *= unlockedVertical;
+    Vector3 deltaWPos = cPos - deltaPos;
+
+    // DELTA STUFF
+    Vector2 rhoCM = new Vector2 ( Input.GetAxis ( "Horizontal" ), Input.GetAxis ( "Vertical" ) );
+    if ( rhoCM.magnitude != 0 ) {
+      if ( mode != 4 ) {
+        ReleaseTarget ();
+        // Activate Shit
+        crosshair.SetActive ( true );
+      }
+      mode = 4;
+    }
 
     if ( mode == 1 ) {
-      cam.transform.localPosition -= deltaWPos;
+      cam.transform.localPosition -= cam.ScreenToWorldPoint ( (Vector2)Input.mousePosition ) - cam.ScreenToWorldPoint ( deltaSPPos );
     }
-    if ( mode == 2 && unlockedVertical == 1 ) {
+    if ( mode == 2 ) {
+      float test = Input.mousePosition.x / Screen.width;
+      if ( test <= 0.05f ) { rhoCM.x = -1; }
+      if ( test >= 0.95f ) { rhoCM.x = 1; }
+      test = Input.mousePosition.y / Screen.height;
+      if ( test <= 0.05f ) { rhoCM.y = -1; }
+      if ( test >= 0.95f ) { rhoCM.y = 1; }
       target.localPosition += deltaWPos;
     }
+    if ( mode == 4 ) {
+      RaycastHit hit;
+      if ( Physics.Raycast ( crosshair.transform.position, Vector3.forward, out hit, 50, lmGPR ) ) {
+        target = hit.collider.transform;        
+      }
+    }
+      // CAMERA STUFF
+      if ( Input.GetAxis ( "Mouse ScrollWheel" ) != 0 ) {
+      float deltaOS = cam.orthographicSize;
+      cam.orthographicSize -= Input.GetAxis ( "Mouse ScrollWheel" ) * strengthZoom;
+      if ( cam.orthographicSize < 2 ) { cam.orthographicSize = 2; }
+      if ( deltaOS != cam.orthographicSize ) {
+        rhoCM += ( cPos - (Vector2)cam.transform.position )
+          * Mathf.Sign ( Input.GetAxis ( "Mouse ScrollWheel" ) ) / cam.orthographicSize;
+      }
+    }
 
-    // CAMERA STUFF
-    cam.transform.localPosition += new Vector3 ( Input.GetAxis ( "Horizontal" ), Input.GetAxis ( "Vertical" ) * unlockedVertical ) * keyPosSens;
-    cam.orthographicSize -= Input.GetAxis ( "Mouse ScrollWheel" ) * strengthZoom;
-    if ( cam.orthographicSize < 2 ) { cam.orthographicSize = 2; }
+    cam.transform.localPosition += ( Vector3 )rhoCM * keyPosSens;
 
+    // SUB CAMERA STUFF ( RESET )
     if ( Input.GetKeyDown ( KeyCode.R ) ) {
       cam.orthographicSize = 5;
       cam.transform.localPosition = Vector3.zero;
-      mode = 0;
+      mode = -1;
+      target = null;
     }
 
+    // FLOOR MANAGER STUFF
+    if ( Input.GetKeyDown ( KeyCode.M ) ) {
+      ReleaseTarget ();
+      manBV.ChangeMode ();
+    }
+
+    // MOUSE POSITION 
+    deltaSPPos = Input.mousePosition;
     deltaPos = cPos;
+  }
+
+  public bool CanGetCSInfo () {
+    return target != null && mode == 4;
+  }
+
+  public List<int> GetCSInfo () {
+    if ( target != null && mode == 4 ) {
+      return target.GetComponent<UnitInfo> ().GetStackInfo ();
+    }
+    return null;
   }
 }

@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5192802043329920804, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
+      propertyPath: frozen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 854118568407083140, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
       propertyPath: m_Name
-      value: UnitBase
+      value: FloorBSE
       objectReference: {fileID: 0}
     - target: {fileID: 854118568407083140, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
       propertyPath: m_Layer

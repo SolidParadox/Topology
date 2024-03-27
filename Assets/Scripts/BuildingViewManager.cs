@@ -1,17 +1,20 @@
+using System.Linq;
 using UnityEngine;
 
 public class BuildingViewManager : MonoBehaviour {
-  public MainController mc;
+  public Vector3 idleAngles;
   public Vector3 overviewAngles;
+
   private Quaternion target = Quaternion.identity;
+
   public bool overviewMode = false;
+
   public float strengthLerp = 3;
 
   public int currentFloor;
 
   public Transform zoneRoot;
   private Transform [ ] zones;
-  private bool fsSear = false;
 
   private void Start () {
     currentFloor = 0;
@@ -21,28 +24,26 @@ public class BuildingViewManager : MonoBehaviour {
     }
   }
 
-  void LateUpdate () {
-    if ( Input.GetKeyDown ( KeyCode.M ) ) {
-      overviewMode = !overviewMode;
-      if ( overviewMode ) {
-        mc.LockVertical ();
-        target = Quaternion.Euler ( overviewAngles );
-      } else {
-        mc.UnlockVertical ();
-        target = Quaternion.identity;
-      }
+  public void ChangeMode () {
+    overviewMode = !overviewMode;
+    if ( overviewMode ) {
+      target = Quaternion.Euler ( overviewAngles );
+    } else {
+      target = Quaternion.Euler ( idleAngles );
     }
+    for ( int i = 0; i < zones.Length; i++ ) {
+      zones [ i ].gameObject.SetActive ( overviewMode || i == currentFloor );
+    }
+  }
 
-    zoneRoot.localRotation = Quaternion.Lerp ( zoneRoot.localRotation, target, strengthLerp * Time.deltaTime );
-    
-    if ( Input.GetAxis ( "MVFS" ) != 0 && fsSear && overviewMode ) {
-      currentFloor += (int) Mathf.Sign ( Input.GetAxis ( "MVFS" ) );
+  public void ChangeFloor ( bool up ) {
+    if ( overviewMode ) {
+      currentFloor += up ? 1 : -1;
       currentFloor = ( currentFloor + zones.Length ) % zones.Length;
-      fsSear = false;
     }
+  }
 
-    if ( Input.GetAxis ( "MVFS" ) == 0 ) {
-      fsSear = true;
-    }
+  void LateUpdate () {
+    zoneRoot.localRotation = Quaternion.Lerp ( zoneRoot.localRotation, target, strengthLerp * Time.deltaTime );
   }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class UnitInfo : MonoBehaviour {
   public static int [ ][ ] special = { new int [] {}, new int [] { 0 } };
@@ -10,11 +11,12 @@ public class UnitInfo : MonoBehaviour {
   public UnitInfo stack;
   public UnitInfo sub;
 
-  public bool moving = false;
+  public bool moving;
+  public bool frozen;
   private Collider col;
 
   private void Start () {
-    col = GetComponent<Collider>();
+    col = GetComponent<Collider> ();
   }
 
   public void RemoveStack () {
@@ -31,10 +33,10 @@ public class UnitInfo : MonoBehaviour {
     }
   }
 
-  public void ChangeTransparency( bool alpha ) {
+  public void ChangeTransparency ( bool alpha ) {
     col.enabled = alpha;
     if ( stack != null ) {
-      stack.ChangeTransparency( alpha );
+      stack.ChangeTransparency ( alpha );
     }
   }
 
@@ -53,7 +55,7 @@ public class UnitInfo : MonoBehaviour {
     sub = target;
   }
 
-  public bool CanStackOn( int alpha ) {
+  public bool CanStackOn ( int alpha ) {
     if ( stack != null ) return false;
     for ( int i = 0; i < special [ alpha ].Length; i++ ) {
       if ( special [ type ] [ i ] == alpha ) {
@@ -79,13 +81,21 @@ public class UnitInfo : MonoBehaviour {
     ChangeTransparency ( !alpha );
   }
 
+  public List<int> GetStackInfo () {
+    List<int> delta = new List<int>{ type };
+    if ( stack != null ) {
+      delta.AddRange ( stack.GetStackInfo() );
+    }
+    return delta;
+  }
+
   private void LateUpdate () {
     if ( lerping ) {
       if ( stack != null ) {
-        stack.transform.position = Vector3.Lerp ( stack.transform.position, transform.position + offset, Time.deltaTime * strengthLerp );
+        stack.transform.localPosition = Vector3.Lerp ( stack.transform.localPosition, transform.localPosition + offset, Time.deltaTime * strengthLerp );
       }
-      if ( sub == null && !moving ) {
-        transform.position = Vector3.Lerp ( transform.position, RoundedVec ( transform.position ), Time.deltaTime * strengthLerp );
+      if ( !frozen && sub == null && !moving ) {
+        transform.localPosition = Vector3.Lerp ( transform.localPosition, RoundedVec ( transform.localPosition ), Time.deltaTime * strengthLerp );
       }
     }
   }

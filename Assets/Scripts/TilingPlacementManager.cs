@@ -3,11 +3,7 @@ using UnityEngine;
 public class TilingPlacementManager : MonoBehaviour {
   public UnitInfo alpha;
   public LayerMask lmRFloor;
-  public int mode;
-
-  private void Start () {
-    mode = 0;
-  }
+  public int mode = 0;
 
   public bool TrySetAlpha ( UnitInfo _alpha ) {
     if ( alpha == null ) {
@@ -26,8 +22,8 @@ public class TilingPlacementManager : MonoBehaviour {
 
   public void LateUpdate () {
     if ( alpha != null ) {
-      // During mode 0, i could continually raycast and check if it's hitting someething, and highlight it accordingly
-      // Also, the highlighted ones could ever so slightly move the stack up so its easier to stack things inbetween
+      // During mode 0, i could continually raycast and check if it's hitting something, and highlight it accordingly
+      // Also, the highlighted ones could ever so slightly move the stack up so its easier to stack things in between
       if ( mode == 1 ) {
         StackAndReleaseAlpha();
         mode = 0;
@@ -39,7 +35,7 @@ public class TilingPlacementManager : MonoBehaviour {
     mode = 1;
   }
 
-  public void StackAndReleaseAlpha () { 
+  private void StackAndReleaseAlpha () { 
     RaycastHit hit;
     if ( Physics.Raycast ( alpha.transform.position - Vector3.forward * 20, Vector3.forward, out hit, 50, lmRFloor ) ) {
       UnitInfo uif = hit.transform.GetComponent<UnitInfo>();
