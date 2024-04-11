@@ -22,10 +22,13 @@ public class BuildingViewManager : MonoBehaviour {
     for ( int i = 0; i < zoneRoot.childCount; i++ ) {
       zones [ i ] = zoneRoot.GetChild( i );
     }
+    ChangeMode ( true );
   }
 
-  public void ChangeMode () {
-    overviewMode = !overviewMode;
+  public void ChangeMode ( bool mode = false ) {
+    if ( !mode ) {
+      overviewMode = !overviewMode;
+    }
     if ( overviewMode ) {
       target = Quaternion.Euler ( overviewAngles );
     } else {

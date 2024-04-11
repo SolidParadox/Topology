@@ -5,7 +5,10 @@ public class UnitInfo : MonoBehaviour {
   public static int [ ][ ] special = { new int [] {}, new int [] { 0 } };
   private static float strengthLerp = 3;
   public bool lerping;
-  public Vector3 offset;
+  private Vector3 offset;
+
+  public float topRho;
+  public float bottomRho;
 
   public int type;
   public UnitInfo stack;
@@ -53,6 +56,7 @@ public class UnitInfo : MonoBehaviour {
   public void StackOn ( UnitInfo target ) {
     target.stack = this;
     sub = target;
+    offset = -new Vector3 ( 0, 0, bottomRho + sub.topRho );
   }
 
   public bool CanStackOn ( int alpha ) {
@@ -91,11 +95,12 @@ public class UnitInfo : MonoBehaviour {
 
   private void LateUpdate () {
     if ( lerping ) {
-      if ( stack != null ) {
-        stack.transform.localPosition = Vector3.Lerp ( stack.transform.localPosition, transform.localPosition + offset, Time.deltaTime * strengthLerp );
+      if ( sub != null ) {
+        transform.position = Vector3.Lerp ( transform.position, sub.transform.position + sub.transform.rotation * offset, Time.deltaTime * strengthLerp );
+        transform.rotation = Quaternion.Lerp ( transform.rotation, sub.transform.rotation, Time.deltaTime * strengthLerp );
       }
       if ( !frozen && sub == null && !moving ) {
-        transform.localPosition = Vector3.Lerp ( transform.localPosition, RoundedVec ( transform.localPosition ), Time.deltaTime * strengthLerp );
+        transform.position = Vector3.Lerp ( transform.position, RoundedVec ( transform.position ), Time.deltaTime * strengthLerp );
       }
     }
   }

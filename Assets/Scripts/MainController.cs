@@ -23,6 +23,7 @@ public class MainController : MonoBehaviour {
   private void Start () { 
     mode = 0;
     deltaPos = Vector3.zero; cPos = Vector3.zero;
+    crosshair.SetActive ( false );
   }
 
   public void ReleaseTarget () {
@@ -44,7 +45,7 @@ public class MainController : MonoBehaviour {
     if ( Input.GetAxis ( "Fire1" ) > 0 ) {
       if ( mode == 0 ) {
         RaycastHit hit;
-        if ( Physics.Raycast ( (Vector3)cPos + Vector3.forward * -10, Vector3.forward, out hit, 20, lmRUnit ) ) {
+        if ( Physics.Raycast ( (Vector3)cPos + Vector3.forward * -25, Vector3.forward, out hit, 75, lmRUnit ) ) {
           // Grabbed Unit, move the unit
           target = hit.collider.transform;
           manTP.TrySetAlpha ( target );
