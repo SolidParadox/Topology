@@ -177,6 +177,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &8118856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -296,6 +298,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &22553883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -415,6 +419,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &49696714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -534,6 +540,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &56860458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -653,6 +661,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &85336093
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -772,6 +782,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &87974802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -891,6 +903,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &89407474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1010,6 +1024,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &113543363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1129,6 +1145,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &131592562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1248,6 +1266,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &143490999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1367,6 +1387,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &150354257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1532,6 +1554,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &167325173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1651,6 +1675,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &169317728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1770,6 +1796,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &177256395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1855,6 +1883,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5192802043329920804, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
+      propertyPath: movable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5192802043329920804, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
       propertyPath: offset.z
       value: -0.5
       objectReference: {fileID: 0}
@@ -1922,6 +1954,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6323996870862693089, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 854118568407083141, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
@@ -1984,6 +2020,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &206050797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2103,6 +2141,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &206699873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2222,6 +2262,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &217002103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2341,6 +2383,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &225695723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2460,6 +2504,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &225789941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2579,6 +2625,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &227448760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2698,6 +2746,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &229765534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2817,6 +2867,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &232694804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2936,6 +2988,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &237053499
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3055,6 +3109,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &259735005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3174,6 +3230,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &266449250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3293,6 +3351,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &276951406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3412,6 +3472,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &289857539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3531,6 +3593,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &292949891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3716,6 +3780,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &436138146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3957,6 +4023,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &469567513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4076,6 +4144,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &471498082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4158,7 +4228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &483261130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4330,6 +4400,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &516077463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4486,7 +4558,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1536
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4568,6 +4640,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &520922059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4687,6 +4761,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &527230563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4806,6 +4882,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &569561949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4925,6 +5003,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &601621974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5002,6 +5082,8 @@ GameObject:
   - component: {fileID: 611710326}
   - component: {fileID: 611710327}
   - component: {fileID: 611710328}
+  - component: {fileID: 611710329}
+  - component: {fileID: 611710330}
   m_Layer: 0
   m_Name: MAN
   m_TagString: Untagged
@@ -5043,7 +5125,7 @@ MonoBehaviour:
   target: {fileID: 0}
   lmRUnit:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 1920
   mode: 0
   keyPosSens: 0.01
   strengthZoom: 10
@@ -5063,10 +5145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59553292163df634fb256cf6546b2b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha: {fileID: 0}
+  target: {fileID: 0}
   lmRFloor:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 1984
   mode: 0
 --- !u!114 &611710328
 MonoBehaviour:
@@ -5086,6 +5168,42 @@ MonoBehaviour:
   strengthLerp: 5
   currentFloor: 0
   zoneRoot: {fileID: 1308257984}
+--- !u!114 &611710329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611710324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bbb1ff29aa02ca428a676177e2d2af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1293131275}
+  visibleLayer: 9
+  visibleTargetLayer: 10
+  rayMask:
+    serializedVersion: 2
+    m_Bits: 960
+  cam: {fileID: 519420031}
+  angularResolution: 2.5
+  downAngle: 80
+  sweepResolution: 120
+--- !u!114 &611710330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611710324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44e243ab35d04d4f950ad4d35f7a1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPoints: 10
+  radius: 1
 --- !u!1 &613127752
 GameObject:
   m_ObjectHideFlags: 0
@@ -5140,6 +5258,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &613127755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5259,6 +5379,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &652985132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5378,6 +5500,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &659146284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5497,6 +5621,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &661562649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5616,6 +5742,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &695417221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5735,6 +5863,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &727184854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6023,6 +6153,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &744439194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6142,6 +6274,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &767667890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6261,6 +6395,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &771480921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6380,6 +6516,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &775242122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6583,6 +6721,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &783244539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6702,6 +6842,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &803704402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6821,6 +6963,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &818093040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6903,7 +7047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &836069961
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7018,6 +7162,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &859297441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7137,6 +7283,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &881586950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7256,6 +7404,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &884482064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7477,6 +7627,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &897265013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7596,6 +7748,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &943114443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7799,6 +7953,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &967905726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7918,6 +8074,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &970010799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8037,6 +8195,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &989571416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8156,6 +8316,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &990074883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8275,6 +8437,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &991959251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8394,6 +8558,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &994257316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8513,6 +8679,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &995089581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8632,6 +8800,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1031462064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8751,6 +8921,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1034553609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8870,6 +9042,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1088603964
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8989,6 +9163,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1104168518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9108,6 +9284,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1144460056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9227,6 +9405,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1147601031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9401,6 +9581,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1241967744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9520,6 +9702,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1254207315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9639,6 +9823,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1269072481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9758,6 +9944,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1272229260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9843,6 +10031,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5192802043329920804, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
+      propertyPath: movable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5192802043329920804, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
       propertyPath: offset.z
       value: -0.5
       objectReference: {fileID: 0}
@@ -9880,7 +10072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 854118568407083142, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.49999994
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 854118568407083142, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9909,6 +10101,10 @@ PrefabInstance:
     - target: {fileID: 854118568407083142, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323996870862693089, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 854118568407083141, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
@@ -9973,6 +10169,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293131272}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1293131275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5192802043329920804, guid: 2d5850da179bc8c428cfe6677754a08e, type: 3}
+  m_PrefabInstance: {fileID: 1293131270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293131272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fd135f5f47cc5469343488da325673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1300071024
 GameObject:
   m_ObjectHideFlags: 0
@@ -10027,6 +10234,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1300071027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10178,6 +10387,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1318221479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10297,6 +10508,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1326467278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10416,6 +10629,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1344350892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10535,6 +10750,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1365547856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10654,6 +10871,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1369098650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10773,6 +10992,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1370004225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10992,6 +11213,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1404282657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11111,6 +11334,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1413547206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11230,6 +11455,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1441784951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11349,6 +11576,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1448491777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11651,6 +11880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameAnchor: {fileID: 0}
   selected: 0
+  units: []
 --- !u!1 &1472643842
 GameObject:
   m_ObjectHideFlags: 0
@@ -11705,6 +11935,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1472643845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11824,6 +12056,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1478686870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11943,6 +12177,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1516199872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12062,6 +12298,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1557478599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12181,6 +12419,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1585700429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12300,6 +12540,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1599891577
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12419,6 +12661,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1659380740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12538,6 +12782,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1664887750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12657,6 +12903,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1665130790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12776,6 +13024,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1680042875
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12895,6 +13145,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1699487114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13014,6 +13266,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1712881272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13133,6 +13387,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1765987179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13252,6 +13508,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1775546929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13371,6 +13629,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1783514955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13490,6 +13750,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1784167085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13693,6 +13955,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1786117766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13812,6 +14076,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1840867243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13931,6 +14197,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1876242869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14050,6 +14318,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1884291531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14169,6 +14439,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1895012396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14288,6 +14560,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1895323903
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14407,6 +14681,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1897452225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14526,6 +14802,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1900561070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14645,6 +14923,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1903053049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14764,6 +15044,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1903379826
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14883,6 +15165,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1907940446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15002,6 +15286,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1945265570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15121,6 +15407,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1951323745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15240,6 +15528,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1966796516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15359,6 +15649,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1992394320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15478,6 +15770,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &1997101527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15597,6 +15891,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &2003071212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15887,6 +16183,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &2032464775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16006,6 +16304,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &2075703934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16125,6 +16425,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &2111690717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16244,6 +16546,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &2113116634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16363,6 +16667,8 @@ MonoBehaviour:
   sub: {fileID: 0}
   moving: 0
   frozen: 1
+  layerRevertTimer: 5
+  movable: 0
 --- !u!65 &2140188487
 BoxCollider:
   m_ObjectHideFlags: 0

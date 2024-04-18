@@ -18,10 +18,29 @@ public class UnitInfo : MonoBehaviour {
   public bool frozen;
   private Collider col;
 
+  private int originalLayer;
+  public float layerRevertTimer = 0.25f;
+  private float deltaRT;
+
+  public bool movable = false;
+
   private void Start () {
     col = GetComponent<Collider> ();
+    originalLayer = gameObject.layer;
   }
 
+  public void RevertLayer () {
+    gameObject.layer = originalLayer;
+  }
+
+  private bool hardToggled = false;
+  public void SetLayer ( int alpha, bool hard = false ) {
+    hardToggled = hard;
+    if ( hardToggled ) return;
+    gameObject.layer = alpha;
+    deltaRT = layerRevertTimer;
+    if ( stack != null ) { stack.SetLayer ( alpha ); }
+  }
   public void RemoveStack () {
     if ( stack != null ) {
       stack.sub = null;
@@ -101,6 +120,12 @@ public class UnitInfo : MonoBehaviour {
       }
       if ( !frozen && sub == null && !moving ) {
         transform.position = Vector3.Lerp ( transform.position, RoundedVec ( transform.position ), Time.deltaTime * strengthLerp );
+      }
+    }
+    if ( deltaRT >= 0 ) {
+      deltaRT -= Time.deltaTime;
+      if ( deltaRT <= 0 ) { 
+        RevertLayer ();
       }
     }
   }

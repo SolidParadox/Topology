@@ -48,8 +48,11 @@ public class MainController : MonoBehaviour {
         if ( Physics.Raycast ( (Vector3)cPos + Vector3.forward * -25, Vector3.forward, out hit, 75, lmRUnit ) ) {
           // Grabbed Unit, move the unit
           target = hit.collider.transform;
-          manTP.TrySetAlpha ( target );
-          mode = 2;
+          if ( manTP.TrySetAlpha ( target ) ) {
+            mode = 2;
+          } else {
+            mode = 1;
+          }
         } else {
           // Grabbed terrain, move the camera
           mode = 1;

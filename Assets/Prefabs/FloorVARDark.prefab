@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916806216031361107, guid: 65e2a8c0f1ba6a54d96b5024373a5036, type: 3}
       propertyPath: m_Name
-      value: FloorBase
+      value: FloorVARDark
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e2a8c0f1ba6a54d96b5024373a5036, type: 3}

@@ -1,15 +1,16 @@
 using UnityEngine;
 
 public class TilingPlacementManager : MonoBehaviour {
-  public UnitInfo alpha;
+  public UnitInfo target;
   public LayerMask lmRFloor;
   public int mode = 0;
 
   public bool TrySetAlpha ( UnitInfo _alpha ) {
-    if ( alpha == null ) {
-      alpha = _alpha;
-      alpha.ChangeMoving ( true );
-      alpha.RemoveSub ();
+    if ( _alpha.movable == false ) return false;
+    if ( target == null ) {
+      target = _alpha;
+      target.ChangeMoving ( true );
+      target.RemoveSub ();
       mode = 0;
       return true;
     }
@@ -21,7 +22,7 @@ public class TilingPlacementManager : MonoBehaviour {
   }
 
   public void LateUpdate () {
-    if ( alpha != null ) {
+    if ( target != null ) {
       // During mode 0, i could continually raycast and check if it's hitting something, and highlight it accordingly
       // Also, the highlighted ones could ever so slightly move the stack up so its easier to stack things in between
       if ( mode == 1 ) {
@@ -37,13 +38,13 @@ public class TilingPlacementManager : MonoBehaviour {
 
   private void StackAndReleaseAlpha () { 
     RaycastHit hit;
-    if ( Physics.Raycast ( alpha.transform.position - Vector3.forward * 20, Vector3.forward, out hit, 50, lmRFloor ) ) {
+    if ( Physics.Raycast ( target.transform.position - Vector3.forward * 20, Vector3.forward, out hit, 50, lmRFloor ) ) {
       UnitInfo uif = hit.transform.GetComponent<UnitInfo>();
       if ( uif != null ) { // And you presumably can stack them on each other
-        alpha.StackOn ( uif );
+        target.StackOn ( uif );
       }
     }
-    alpha.ChangeMoving ( false );
-    alpha = null;
+    target.ChangeMoving ( false );
+    target = null;
   }
 }

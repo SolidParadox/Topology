@@ -112,9 +112,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerping: 1
-  offset: {x: 0, y: 0, z: -0.25}
+  topRho: 0
+  bottomRho: 0
   type: 0
   stack: {fileID: 0}
   sub: {fileID: 0}
   moving: 0
   frozen: 0
+  layerRevertTimer: 5
+  movable: 0
